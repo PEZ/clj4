@@ -4,4 +4,7 @@
    (mapcat #(repeat n %) s))
  [1 2 3] 2)
 
-(repeat 2 '(1 2 3 4))
+(def f (comp mapcat partial repeat))
+(f 2 [1 2 3 4])
+
+#(mapcat (partial repeat 2) %)
